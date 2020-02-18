@@ -5,7 +5,7 @@ import * as jsmxq from "jsmxq";
 var gJsmXchange = new jsmxq.Xchange();
 
 /*Xchange + React component*/
-export default class xrComp extends React.Component {
+export default class XRComponent extends React.Component {
 
     constructor(name) {
         super();
