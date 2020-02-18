@@ -1,0 +1,24 @@
+{
+  "name": "jsmxq-react",
+  "version": "1.0.0",
+  "description": "jsmxq Reactjs glue",
+  "main": "src/jsmxq-react.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ladder-b/jsmx-react.git"
+  },
+  "keywords": [
+    "Message",
+    "driven",
+    "React"
+  ],
+  "author": "Balwinder Singh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ladder-b/jsmxq-react/issues"
+  },
+  "homepage": "https://github.com/ladder-b/jsmxq-react#readme"
+}
