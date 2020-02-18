@@ -1,9 +1,9 @@
 import React from 'react';
-import * as jsmxq from "jsmxq";
+import { Xchange, Subscriber } from "jsmxq";
 
 /*Message queue Xchange*/
 if(gJsmXchange === undefined) {
-    var gJsmXchange = new jsmxq.Xchange();
+    var gJsmXchange = new Xchange();
 }
 
 /*Xchange + React component*/
@@ -17,9 +17,9 @@ export default class XRComponent extends React.Component {
 	 * _xrname should be unique for each component. Message is passed based on this _xrname.
 	 */	
         if(this.props !== undefined && this.props._xrname !== undefined) {
-            this.subscriber = new jsmxq.Subscriber(this.props._xrname);
+            this.subscriber = new Subscriber(this.props._xrname);
 	} else {
-            this.subscriber = new jsmxq.Subscriber("_xrname_");
+            this.subscriber = new Subscriber("_xrname_");
 	}
 
         this.subscriber.setCallbackObj(this);

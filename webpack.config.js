@@ -4,6 +4,7 @@ const webpack = require("webpack");
 module.exports = {
   entry: "./src/jsmxq-react.js",
   mode: "production",
+ // mode: "development",
   module: {
     rules: [
       {
@@ -17,10 +18,20 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist/"),
     publicPath: "/dist/",
-    filename: "jsmxq-react.js"
+    filename: "jsmxq-react.js",
+    library: "jsmxq-react",
+    libraryTarget: "umd"
   },
-  externals : {
-    react: "react",
-    jsmxq: "jsmxq"
-  }
+  externals : [ {
+      React: "react",
+     // Xchange: "jsmxq",
+     // Subscriber: "jsmxq",
+      lodash : {
+        commonjs: 'lodash',
+        amd: 'lodash',
+        root: '_' // indicates global variable
+      },
+    },
+   "jsmxq"
+  ]
 };
