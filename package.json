@@ -1,6 +1,6 @@
 {
   "name": "jsmxq-react",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "jsmxq Reactjs glue",
   "main": "src/jsmxq-react.js",
   "scripts": {

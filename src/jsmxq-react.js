@@ -9,7 +9,7 @@ export default class XRComponent extends React.Component {
 
     constructor(name) {
         super();
-        this.subscriber = new jsmx.Subscriber(name);
+        this.subscriber = new jsmxq.Subscriber(name);
         this.subscriber.setCallbackObj(this);
         gJsmXchange.subscribe(this.subscriber);
     }
