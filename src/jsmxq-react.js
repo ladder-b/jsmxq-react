@@ -26,6 +26,10 @@ export default class XRComponent extends React.Component {
         gJsmXchange.subscribe(this.subscriber);
     }
 
+    post(subject, msg, dst, ttl) {
+        this.subscriber.post(subject, msg, dst, ttl);
+    }
+
     /*overrite in your component class*/
     onMessageReceive() {}
 }
