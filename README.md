@@ -22,7 +22,7 @@ npm install jsmxq-react
 Please have a look at example below. In this example we create a simple text edit field with validation.
 
 Please note following in the example
-1. We create edit componenet by extending XRComponent
+1. We create edit component by extending XRComponent
 2. Our component posts messages whenever changed.
 3. App component subscribes to messages send by edit component and takes appropriate action.
 4. App component posts message, which is received by validator component.
