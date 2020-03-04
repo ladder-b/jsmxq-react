@@ -4,7 +4,7 @@ jsmxq-react is small glue between messaging library [jsmxq](https://github.com/l
 
 This module enables react components to post and/or receive messages. Any message which is posted must have a subject, based on which message is delivered to interested components. Not only react components you can make other modules of you project message aware, eg a validator can provide validation service, it can validate message data it receieves and post response as message.
 
-Pl have a look at [simple-demo](https://github.com/ladder-b/jsmxq-react-demo) and [todo](https://github.com/ladder-b/jsmxq-react-todo) app made using this technology.
+Pl have a look at [jsmxq-react-demo](https://github.com/ladder-b/jsmxq-react-demo) and [jsmxq-react-todo](https://github.com/ladder-b/jsmxq-react-todo) app made using this technology.
 
 ## Installation:
 
@@ -21,7 +21,7 @@ npm install jsmxq-react
 
 If you dont want to extend your component, you can directly use `jsmxq`, but in this case you will have to create one global Xchange object and Subscriber object in each component.
 
-Please have a look at example below. In this example we create a simple text edit field with validation. This example can downloaded from [simple-demo](https://github.com/ladder-b/jsmxq-react-demo).
+Please have a look at example below. In this example we create a simple text edit field with validation. This example can downloaded from [jsmxq-react-demo](https://github.com/ladder-b/jsmxq-react-demo).
 
 Please note following in the example
 1. We create edit component by extending XRComponent
