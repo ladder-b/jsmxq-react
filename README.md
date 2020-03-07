@@ -23,16 +23,15 @@ To post a message, use function post(subject, msgBody) and to respond to incomin
 Before you can receive any message, you will have to add subjects to your watched subjects. A subject could be a string or regular expression. You use function subscriber.addSubject(subject: string | RegExt) to add subject.
 Pl note regular expression as a subject is not possible when posting a message, it can be only used when adding to a subject. Any number of subjects can be added.
 
-Please have a look at example below. In this example we create a simple text edit field with validation.
-
 Please have a look at example below. In this example we create a simple text edit field with validation. This example can downloaded from [jsmxq-react-demo](https://github.com/ladder-b/jsmxq-react-demo).
 
 Please note following in the example
-1. We create edit component by extending XRComponent
-2. Our component posts messages whenever changed.
-3. Parent App component subscribes to messages send by edit component and takes appropriate action.
-4. App component posts message, which is received by validator component.
-5. Validator validates input and posts another message, which is received by App component and edit component is updated appropriately.
+1. We create edit component named JsmxEdit by extending XRComponent. It is defined in file JsmxEdit.js.
+2. Our edit component posts a message whenever changed. This is done in handleChange(e) function. The message is send with subject 'MYINPUT_CHANGED' .
+3. Parent App component described in file App.js, subscribes to three subjects 'MYINPUT_EDIT_DONE', 'MYINPUT_CHANGED' and /VAL_\B/. This is done in constructor.
+4. App component will receive messages with subject 'MYINPUT_CHANGED', here this message is sent by edit component. Once this message is received, App component posts another message with subject 'VALIDATOR'.
+5. Validator is defind in file validator.js, it subscribes to any messages with subject 'VALIDATOR'. It validates input and posts another message. Pl note validator return posts a message with a subject which it derived from incoming message. Thus sender to validator can specify what subject to be used to in return message.
+6. Message from validator is received by App component, and it updates edit component appropriately. To update component react's setState() is called in oMessageReceive(msg) function.
 
 ### JsmxEdit.js
 ```
