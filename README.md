@@ -4,7 +4,7 @@ jsmxq-react is small glue between messaging library [jsmxq](https://github.com/l
 
 This module enables react components to post and/or receive messages. Any message which is posted must have a subject, based on which message is delivered to interested components. Not only react components you can make other modules of you project message aware, eg a validator can provide validation service, it can validate message data it receieves and post response as message.
 
-Pl have a look at [todo](https://github.com/ladder-b/jsmxq-react-todo) app made using this technology.
+Pl have a look at very simple [jsmxq-react-demo](https://github.com/ladder-b/jsmxq-react-demo) and [jsmxq-react-todo](https://github.com/ladder-b/jsmxq-react-todo) app made using this technology.
 
 ## Installation:
 
@@ -20,14 +20,17 @@ npm install jsmxq-react
 `jsmxq-react` provides class XRComponent, which your component should extend. Any component extending XRComponent can take part in messaging.
 
 To post a message, use function post(subject, msgBody) and to respond to incoming message, implement function onMessageReceive(msg). You will get msgBody in msg.content field.
-Before you can receive any message, you will have to add subjects to your watched subjects. A subject could be string or regular expression. You use function subscriber.addSubject(subject: string | RegExt) to add subject. Pl note regular expression as a subject is not possible when posting a message, it can be only used when adding to a subject. Any number of subjects can be added.
+Before you can receive any message, you will have to add subjects to your watched subjects. A subject could be a string or regular expression. You use function subscriber.addSubject(subject: string | RegExt) to add subject.
+Pl note regular expression as a subject is not possible when posting a message, it can be only used when adding to a subject. Any number of subjects can be added.
 
 Please have a look at example below. In this example we create a simple text edit field with validation.
+
+Please have a look at example below. In this example we create a simple text edit field with validation. This example can downloaded from [jsmxq-react-demo](https://github.com/ladder-b/jsmxq-react-demo).
 
 Please note following in the example
 1. We create edit component by extending XRComponent
 2. Our component posts messages whenever changed.
-3. App component subscribes to messages send by edit component and takes appropriate action.
+3. Parent App component subscribes to messages send by edit component and takes appropriate action.
 4. App component posts message, which is received by validator component.
 5. Validator validates input and posts another message, which is received by App component and edit component is updated appropriately.
 
