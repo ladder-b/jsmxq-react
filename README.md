@@ -19,6 +19,9 @@ npm install jsmxq-react
 
 `jsmxq-react` provides class XRComponent, which your component should extend. Any component extending XRComponent can take part in messaging.
 
+To post a message, use function post(subject, msgBody) and to respond to incoming message, implement function onMessageReceive(msg). You will get msgBody in msg.content field.
+Before you can receive any message, you will have to add subjects to your watched subjects. A subject could be string or regular expression. You use function subscriber.addSubject(subject: string | RegExt) to add subject. Pl note regular expression as a subject is not possible when posting a message, it can be only used when adding to a subject. Any number of subjects can be added.
+
 Please have a look at example below. In this example we create a simple text edit field with validation.
 
 Please note following in the example
