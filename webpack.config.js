@@ -1,5 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: "./src/jsmxq-react.js",
@@ -22,6 +23,11 @@ module.exports = {
     library: "jsmxq-react",
     libraryTarget: "umd"
   },
+  plugins: [
+    new CopyPlugin([
+      { from: 'src/jsmxq-react.d.ts' }
+    ]),
+  ],
   externals : [ {
       React: "react",
      // Xchange: "jsmxq",
