@@ -1,7 +1,7 @@
 import { Xchange, Subscriber, Message } from "jsmxq";
 
 declare var gJsmXchange: Xchange;
-declare class XRComponent extends React.Component {
+export default class XRComponent extends React.Component {
     subscriber: Subscriber;
 
     constructor(props: any);
