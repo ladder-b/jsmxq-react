@@ -14,7 +14,7 @@ export default class XRComponent extends React.Component {
 	
 	/*
 	 * _xrname should not used in componet props as it is reserved to pass name to subscriber.
-	 * _xrname should be unique for each component. Message is passed based on this _xrname.
+	 * _xrname should be unique for each component. It might be used in future for host/src based routing.
 	 */	
         if(this.props !== undefined && this.props._xrname !== undefined) {
             this.subscriber = new Subscriber(this.props._xrname);
