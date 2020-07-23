@@ -1,10 +1,20 @@
+import React from 'react';
 import { Xchange, Subscriber, Message } from "jsmxq";
 
 declare var gJsmXchange: Xchange;
-export default class XRComponent extends React.Component {
+
+export interface IXRComponentProps {
+    _xrname?: string;
+    _jsmxqSub?: string | Array<string> | RegExp;
+}
+
+export default class XRComponent<P extends IXRComponentProps = {}, S = {}> extends React.Component<P, S>{
     subscriber: Subscriber;
 
-    constructor(props: any);
+    constructor();
+    constructor(props: P);
+    
+    getMySubject(): string;
     post(subject: string, data: Object, dst?: string, ttl?: number): void;
     onMessageReceive(msg: Message): void;
 }
