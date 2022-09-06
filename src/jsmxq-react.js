@@ -48,8 +48,8 @@ export default class XRComponent extends React.Component {
             '';
     }
 
-    post(subject, msg, dst, ttl) {
-        this.subscriber.post(subject, msg, dst, ttl);
+    post(subject, msg, dst, onMessageSent) {
+        this.subscriber.post(subject, msg, dst, onMessageSent);
     }
 
     /*overrite in your component class*/
