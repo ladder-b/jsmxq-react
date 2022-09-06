@@ -15,6 +15,6 @@ export default class XRComponent<P extends IXRComponentProps = {}, S = {}> exten
     constructor(props: P);
     
     getMySubject(): string;
-    post(subject: string, data: Object, dst?: string, onMessageSent: (result: any) => void): void;
+    post(subject: string, data: Object, dst?: string, onMessageSent?: (result: any) => void): void;
     onMessageReceive(msg: Message): void;
 }
